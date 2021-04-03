@@ -1,0 +1,35 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "css-loader": "^5.2.0",
+    "file-loader": "^6.2.0",
+    "import-glob-loader": "^1.1.0",
+    "mini-css-extract-plugin": "^1.4.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^4.2.0",
+    "postcss-nested": "^5.0.5",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "Android >= 4.4"
+  ]
+}
