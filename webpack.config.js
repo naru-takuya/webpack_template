@@ -30,6 +30,9 @@ module.exports = {
               },
             },  
           },
+          {
+            loader: 'import-glob-loader',
+          },
         ],
       },
       {
@@ -52,30 +55,30 @@ module.exports = {
       filename: 'css/style.css',
       ignoreOrder: true,
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: 'src/img/', to: 'img/' },
-      ],
-    }),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      pngquant: {
-        quality: '65-80'
-      },
-      gifsicle: {
-        interlaced: false,
-        optimizationLevel: 1,
-        colors: 256
-      },
-      svgo: {
-      },
-      plugins: [
-        ImageminMozjpeg({
-          quality: 50,
-          progressive: true
-        })
-      ]
-    })
+    // new CopyPlugin({
+    //   patterns: [
+    //     { from: 'src/img/', to: 'img/' },
+    //   ],
+    // }),
+    // new ImageminPlugin({
+    //   test: /\.(jpe?g|png|gif|svg)$/i,
+    //   pngquant: {
+    //     quality: '65-80'
+    //   },
+    //   gifsicle: {
+    //     interlaced: false,
+    //     optimizationLevel: 1,
+    //     colors: 256
+    //   },
+    //   svgo: {
+    //   },
+    //   plugins: [
+    //     ImageminMozjpeg({
+    //       quality: 50,
+    //       progressive: true
+    //     })
+    //   ]
+    // })
   ]
 };
 
