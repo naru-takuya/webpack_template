@@ -1,22 +1,21 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ImageminMozjpeg = require('imagemin-mozjpeg');
-
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const ImageminMozjpeg = require("imagemin-mozjpeg");
 
 module.exports = {
   // 開発環境はdevelopment
-  mode: 'development',
+  mode: "development",
   // 任意の場所にエントリーポイント作成
-  entry: './src/js/app.js',
+  entry: "./src/js/app.js",
   // どこにバンドルしたファイルを出力するか
   output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'js/bundle.js',
+    path: path.resolve(__dirname, "public"),
+    filename: "js/bundle.js",
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
+    contentBase: path.resolve(__dirname, "public"),
   },
   module: {
     rules: [
@@ -24,38 +23,41 @@ module.exports = {
         test: /\.scss$/i,
         use: [
           { loader: MiniCssExtractPlugin.loader },
-          { loader: 'css-loader' },
-          { 
-            loader: 'sass-loader',
-            options:{
-              sassOptions:{
-                outputStyle:'expanded',
+          { loader: "css-loader" },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [require("postcss-nested"), require("autoprefixer")],
               },
-            },  
+            },
           },
           {
-            loader: 'import-glob-loader',
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                outputStyle: "expanded",
+              },
+            },
+          },
+          {
+            loader: "import-glob-loader",
           },
         ],
       },
       {
         test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' },
-        ],
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }],
       },
       {
         test: /\.(gif|png|jpe?g|JPG|)$/,
-        use: [
-          { loader: 'url-loader' },
-        ],
+        use: [{ loader: "url-loader" }],
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/style.css',
+      filename: "css/style.css",
       ignoreOrder: true,
     }),
     // new CopyPlugin({
@@ -82,6 +84,5 @@ module.exports = {
     //     })
     //   ]
     // })
-  ]
+  ],
 };
-
