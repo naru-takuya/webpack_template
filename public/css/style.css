@@ -3,7 +3,8 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-style: solid;
   border-width: 0;
   margin: 0;
@@ -95,7 +96,8 @@ dd {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -140,7 +142,8 @@ a {
 abbr[title] {
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -215,7 +218,8 @@ optgroup,
 select,
 textarea {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -232,12 +236,14 @@ textarea {
  */
 [type="checkbox"] {
   -webkit-appearance: checkbox;
-  appearance: checkbox;
+  -moz-appearance: checkbox;
+       appearance: checkbox;
 }
 
 [type="radio"] {
   -webkit-appearance: radio;
-  appearance: radio;
+  -moz-appearance: radio;
+       appearance: radio;
 }
 
 /**
@@ -269,7 +275,8 @@ button,
 [type="submit"] {
   cursor: pointer;
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 
 button[disabled],
