@@ -50,8 +50,21 @@ module.exports = {
         use: [{ loader: "style-loader" }, { loader: "css-loader" }],
       },
       {
-        test: /\.(gif|png|jpe?g|JPG|)$/,
+        test: /\.(gif|png|jpe?g|JPG)$/,
         use: [{ loader: "url-loader" }],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 10000,
+              fallback: "file-loader",
+              name: "../font/[name].[ext]",
+            },
+          },
+        ],
       },
     ],
   },
@@ -62,27 +75,33 @@ module.exports = {
     }),
     // new CopyPlugin({
     //   patterns: [
-    //     { from: 'src/img/', to: 'img/' },
+    //     {
+    //       from: "src/img/",
+    //       to: "img/",
+    //     },
+    //     {
+    //       from: "src/font/",
+    //       to: "font/",
+    //     },
     //   ],
     // }),
     // new ImageminPlugin({
     //   test: /\.(jpe?g|png|gif|svg)$/i,
     //   pngquant: {
-    //     quality: '65-80'
+    //     quality: "65-80",
     //   },
     //   gifsicle: {
     //     interlaced: false,
     //     optimizationLevel: 1,
-    //     colors: 256
+    //     colors: 256,
     //   },
-    //   svgo: {
-    //   },
+    //   svgo: {},
     //   plugins: [
     //     ImageminMozjpeg({
     //       quality: 50,
-    //       progressive: true
-    //     })
-    //   ]
-    // })
+    //       progressive: true,
+    //     }),
+    //   ],
+    // }),
   ],
 };
