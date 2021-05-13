@@ -1,0 +1,10 @@
+// // // フォント
+@font-face {
+  font-family: "MyFont";
+  src: url("../font/Bradley-Hand-Bold.ttf");
+}
+
+body {
+  font-family: "MyFont";
+  // background-image: url(../img/building.jpg);
+}
