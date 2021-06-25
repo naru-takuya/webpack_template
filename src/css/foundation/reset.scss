@@ -1,3 +1,5 @@
+// 公式のresetCSSに独自の変更を追記したもの
+
 /* Reset box-model and set borders */
 /* ============================================ */
 
@@ -224,7 +226,7 @@ iframe {
 button,
 input,
 optgroup,
-select,
+// select,
 textarea {
   -webkit-appearance: none;
   appearance: none;
