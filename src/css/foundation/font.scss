@@ -12,18 +12,10 @@
  * 必ず最低限のfont-familyに定義しておく
  * (safari等の標準フォントがダサいため)
  *
+ * 暫定でNotoSansJPを使っている
  * 英数字系のフォントも考慮したい
  */
 
-// サルワカオススメ
-$font-family-base: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-
-// タイトルに使用（游ゴシックメイン）
-$font-family-title: YuGothic, "Yu Gothic", sans-serif;
-
-// テキストに使用（ヒラギノ角ゴシックメイン）
-$font-family-text: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴシック", "Hiragino Sans", YuGothic, "Yu Gothic", sans-serif;
-
 html {
-  font-family: $font-family-base;
+  font-family: "Noto Sans JP", sans-serif;
 }
